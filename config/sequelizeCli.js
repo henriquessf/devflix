@@ -8,3 +8,5 @@ module.exports = {
     password: 'onebitflix'
   }
 }
+
+//arquivo de configuração do sequelize no JS

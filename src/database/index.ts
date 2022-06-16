@@ -12,3 +12,4 @@ export const sequelize = new Sequelize({
   }
 })
 
+//arquivo de configuração do database sequelize no código TS
