@@ -10,7 +10,7 @@ export const episodeResourceOptions: ResourceOptions = {
   showProperties: ['id','name','synopsis','order','videoUrl','courseId','secondsLong','createdAt','updatedAt']
 }
 
-export const episodeFeatureOptions: FeatureType[] = [
+export const episodeResourceFeatures: FeatureType[] = [
   uploadFileFeature({
     provider: {
       local: {
