@@ -2,37 +2,41 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('episodes', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.DataTypes.INTEGER
       },
-      name: {
+      first_name: {
         allowNull: false,
         type: Sequelize.DataTypes.STRING
       },
-      synopsis: {
+      last_name: {
         allowNull: false,
-        type: Sequelize.DataTypes.TEXT
-      },
-      order: {
-        allowNull: false,
-        type: Sequelize.DataTypes.INTEGER
-      },
-      video_url: {
         type: Sequelize.DataTypes.STRING
       },
-      seconds_long: {
-        type: Sequelize.DataTypes.INTEGER
-      },
-      course_id: {
+      phone: {
         allowNull: false,
-        type: Sequelize.DataTypes.INTEGER,
-        references: { model: 'courses', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'RESTRICT'
+        type: Sequelize.DataTypes.STRING
+      },
+      birth: {
+        allowNull: false,
+        type: Sequelize.DataTypes.DATE
+      },
+      email: {
+        allowNull: false,
+        unique: true,
+        type: Sequelize.DataTypes.STRING
+      },
+      password: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
+      },
+      role: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
       },
       created_at: {
         allowNull: false,
@@ -46,6 +50,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('episodes')
+    await queryInterface.dropTable('users')
   }
 }
