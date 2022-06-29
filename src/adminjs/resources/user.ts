@@ -1,13 +1,16 @@
 import { ResourceOptions } from "adminjs";
+import { User } from "../../models";
+import bcrypt from 'bcrypt';
 
 const userResourceOptions: ResourceOptions = {
+
   navigation: 'Administração',
   properties: {
     birth: {
       type: 'date'
     },
     password: {
-      type: 'password'
+      type: 'password',
     },
     role: {
       availableValues: [
@@ -25,6 +28,7 @@ const userResourceOptions: ResourceOptions = {
     'password',
     'role'
   ],
+  
   filterProperties: [
     'firstName',
     'lastName',
