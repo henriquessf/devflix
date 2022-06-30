@@ -1,5 +1,5 @@
 import { Category } from "../models"
-
+//arquivos de services, servem para controlar as funções a serem feitas pelos endpoints 
 export const categoryService = {
   findAllPaginated: async (page: number, perPage: number) => {
     const offset = (page - 1) * perPage //offset será o valor limitador para saber qual valor pular na paginação
