@@ -21,7 +21,7 @@ export const categoryService = {
   },
   findCoursesByCategoryId: async (id: string) =>{//função para buscar categorias pelo ID e mostrar os cursos associados
     const categoryCourses = await Category.findByPk(id, {//pegando através da PK os cursos, usando a association 'courses'
-      attributes: ['id','name'], //definindo quais colunas será trazido na função
+      attributes: ['id','name'], //definindo quais colunas será trazido na função (tabela category)
       include: {
         association: 'courses',
         attributes: [
