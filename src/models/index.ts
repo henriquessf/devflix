@@ -3,7 +3,7 @@ import { Course } from "./Course";
 import { Episode } from "./Episode";
 import { User } from "./User";
 
-Category.hasMany(Course)
+Category.hasMany(Course, {as: 'courses'})//nomeando a associaçãoo da tabela category com a tabela course, como courses
 
 Course.belongsTo(Category)
 Course.hasMany(Episode)
