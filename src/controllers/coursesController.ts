@@ -3,7 +3,9 @@ import { getPaginationParams } from '../helpers/getPaginationParams'
 import { courseService } from '../services/courseService'
 
 export const coursesController = {
-  //GET /courses/search
+  //GET /courses/popular (pesquisa os 10 cursos mais populares)
+
+  //GET /courses/search (pesquisa pelo nome do curso)
   search: async (req: Request, res: Response) => {
     const { name } = req.body
     const [page, perPage] = getPaginationParams(req.query)
@@ -22,7 +24,7 @@ export const coursesController = {
       }
     }
   },
-  //GET /courses/newest
+  //GET /courses/newest (10 ultimos lançamentos)
   newest: async (req: Request, res: Response) => {
     try {
       const newestCourses = await courseService.getNewestCourses()
@@ -34,7 +36,7 @@ export const coursesController = {
     }
   },
 
-  //GET /courses/feature
+  //GET /courses/feature (pesquisa 3 cursos em destaque)
   featured: async (req: Request, res: Response) => {
     try {
       const featuredCourses = await courseService.getRandomFeaturedCourses()
@@ -45,6 +47,7 @@ export const coursesController = {
       }
     }
   },
+  //GET /courses/:id, procura os cursos pelo ID e traz com eles os episódios do curso
   show: async (req: Request, res: Response) => {
     const { id } = req.params
     try {
